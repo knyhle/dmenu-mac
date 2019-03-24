@@ -54,7 +54,6 @@ class ResultsView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         let textFontAttributes = [String: AnyObject]()
         
-        
         var textX = CGFloat(rectFillPadding)
         for i in 0 ..< list.count {
             let appName = (_list[i].deletingPathExtension().lastPathComponent) as NSString
@@ -74,7 +73,7 @@ class ResultsView: NSView {
                 x: textX,
                 y: textY,
                 width: size.width,
-                height: size.height), withAttributes: [NSForegroundColorAttributeName: _textColor])
+                height: size.height), withAttributes: [NSAttributedString.Key.foregroundColor: _textColor])
             
             textX += 10 + size.width;
             
